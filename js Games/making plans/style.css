@@ -1,0 +1,65 @@
+#wrapper {
+    width: 350px;
+    border: 1px solid black;
+    padding: 8px;
+    padding-right: 10px;
+    margin: 0 auto;
+}
+
+#input {
+    height: 25px;
+    width: inherit;
+    background: #fff;
+    border: 1px solid black;
+}
+
+.block {
+    width: 368px;
+    border: 1px solid black;
+    margin: 0 auto;
+    line-height: 41px;
+    position: relative;
+}
+
+.check {
+    margin-left: 9px;
+    margin-right: 10px;
+}
+
+.cansel {
+    display: inline-block;
+    line-height: 20px;
+    width: 25px;
+    border-radius: 30px;
+    border: 1px solid red;
+    font-size: 15px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    left: 90%;
+    top: 25%;
+}
+
+.cansel:hover {
+    color: deeppink;
+    border: 1px solid deeppink;
+    cursor: pointer;
+}
+
+.cansel:active::first-letter {
+    margin-left: 3px;
+}
+
+.text {
+    display: inline-block;
+    width: 80%;
+    margin: 3px 0 3px 0;
+}
+
+.newInp {
+    width: 95%;
+    height: 30px;
+    background: #eee;
+    border: 1px solid black;
+}

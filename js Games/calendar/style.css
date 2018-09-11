@@ -1,0 +1,139 @@
+body {
+    position: relative;
+}
+
+#wrapper {
+    width: 252px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.firstPosition {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    left: 670px;
+    top: 100px;
+    border: 1px solid black;
+    opacity: 0;
+    transition: all .5s linear;
+}
+
+.secondPosition {
+    width: 400px;
+    height: 197px;
+    left: 100px;
+    top: 0;
+    opacity: 1;
+}
+
+#planses {
+    text-align: center;
+    overflow: hidden;
+}
+
+#exit {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-weight: bold;
+    width: 18px;
+    color: white;
+    background: red;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+}
+
+#exit:active {
+    width: 22px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#days {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    background: #ddd;
+    padding: 0 10px 0 10px;
+}
+
+.block,
+#nav {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+.now {
+    background: black;
+    color: white;
+}
+
+.monthDay:not(.empty):hover {
+    background: black;
+    color: white;
+}
+
+#months {
+    padding: 10px 0px 0px 8px;
+    overflow: auto;
+}
+
+.monthDay:not(:nth-child(7n)) {
+    margin-right: 16.1px;
+}
+
+.monthDay {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    float: left;
+    margin-bottom: 5px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+}
+
+#addBut {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    margin: 0;
+}
+
+#EnterText {
+    width: 300px;
+    text-align: center;
+}
+
+.active {
+    background: #eee;
+    outline: 1px solid #aaa;
+}
+
+#PlansesField {
+    text-align: left;
+    max-height: 93px;
+    overflow: auto;
+}
+
+.clearfix {
+    clear: both;
+}

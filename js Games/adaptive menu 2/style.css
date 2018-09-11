@@ -1,0 +1,21 @@
+#wrapper {
+    width: 400px;
+    margin: 0 auto;
+}
+
+p {
+    width: 400px;
+    margin: 0 auto;
+    transition: height .4s ease-in;
+    height: 0;
+    overflow: hidden;
+}
+
+.block {
+    background: #f6f6f6;
+    border: 1px solid #c5c5c5;
+    font-size: 20px;
+    padding: 10px 0 10px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
