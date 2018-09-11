@@ -1,0 +1,50 @@
+#wrapper {
+    width: 337px;
+    border: 2px solid green;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul li {
+    display: inline-block;
+    padding: 0 15px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 7px 7px 0 0;
+    line-height: 33px;
+    transition: all .1s linear;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.nochosen {
+    background: #F5F3F0;
+}
+
+.chosen {
+    color: #fff;
+    background: #409d36;
+}
+
+p {
+    text-align: justify;
+}
