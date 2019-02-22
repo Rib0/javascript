@@ -1,77 +1,64 @@
-var input = document.getElementById("input");
-var wrap = document.getElementById("wrapper");
-var inputs = document.getElementsByClassName("check");
-document.body.addEventListener("click", Check_this);
-document.body.addEventListener("click", Change);
-document.body.addEventListener("click", close);
-input.onkeydown = add;
-var count = 0;
-var text;
+class TodoList {
+    constructor () {
+        this.todos = document.querySelector('.todos');
+        const input = document.getElementById('input');
 
+        this.addTodo = this.addTodo.bind(this);
 
-function add(event) {
-    var key = event.keyCode;
-    if (key == 13 && input.value != "") {
-        var inputEl = document.createElement("input");
-        inputEl.setAttribute("type", "checkbox");
-        inputEl.classList.add("check");
-        var block = document.createElement("div");
-        block.classList.add("block");
-        block.appendChild(inputEl);
-        var text = document.createElement("span");
-        text.classList.add("text");
-        text.innerHTML = input.value;
+        input.onkeypress = this.addTodo;
+    }
+
+    addTodo (e) {
+        if (e.keyCode !== 13 || !e.target.value) return;
+
+        this.createTodoBlock(e.target.value);
+        e.target.value = '';
+    }
+
+    createTodoBlock (innerText) {
+        const block = document.createElement('div');
+        block.classList.add('todo');
+        block.addEventListener('click', e => {
+            this.completeTodo(e);
+            this.closeTodo(e);
+        })
+
+        const complete = document.createElement('input');
+        complete.type = 'checkbox';
+        complete.classList.add('complete');
+
+        const close = document.createElement('span');
+        close.classList.add('close');
+        close.textContent = 'x';
+
+        const actions = document.createElement('div');
+        actions.appendChild(complete);
+        actions.appendChild(close);
+        actions.classList.add('actions');
+
+        const text = document.createElement('div');
+        text.textContent = innerText;
+        text.classList.add('text');
+
         block.appendChild(text);
-        var cansel = document.createElement("span");
-        cansel.classList.add("cansel");
-        cansel.innerHTML = "X";
-        block.appendChild(cansel);
-        input.value = "";
-        document.body.insertBefore(block, document.body.firstChild.nextElementSibling.nextElementSibling);
+        block.appendChild(actions);
+        
+        this.todos.insertBefore(block, this.todos.firstChild);
+    }
+
+    completeTodo (e) {
+        if (!e.target.classList.contains('complete')) return;
+
+        const todo = e.currentTarget.querySelector('.text');
+        todo.classList.toggle('completed'); 
+    }
+
+    closeTodo (e) {
+        if(!e.target.classList.contains('close')) return;
+
+        const todo = e.currentTarget;
+        todo.parentElement.removeChild(todo);        
     }
 }
 
-function Check_this(event) {
-    var target = event.target;
-    if (target.classList.contains("check")) {
-        var elem = target.nextElementSibling;
-        text = elem.innerHTML;
-        if (elem.tagName == "SPAN" && count == 1) {
-            text = elem.firstChild.value;
-            elem.removeChild(elem.firstChild);
-        }
-        elem.innerHTML = text;
-        count = 0;
-        elem.style.textDecoration = "line-through";
-        target.style.visibility = "hidden";
-    }
-}
-
-function Change(event) {
-    var target = event.target;
-    if (target.classList.contains("text") && count == 0) {
-        count = 1;
-        text = target.innerHTML;
-        target.innerHTML = "";
-        var input = document.createElement("input");
-        target.appendChild(input);
-        input.value = text;
-        input.classList.add("newInp");
-        input.onkeydown = accept;
-    }
-}
-
-function accept(event) {
-    if (event.keyCode == 13) {
-        this.parentNode.innerHTML = this.value;
-        count = 0;
-    }
-}
-
-function close(event) {
-    var target = event.target;
-    if (target.classList.contains("cansel")) {
-        target.parentElement.parentElement.removeChild(target.parentElement);
-        count = 0;
-    }
-}
+const todoList = new TodoList();

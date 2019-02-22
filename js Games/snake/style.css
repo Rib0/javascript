@@ -48,7 +48,7 @@ body{
     margin-left: 30px;
 }
 
-#Tutorial{
+#Tutorial, #leader-board{
     margin: 0 0px 0px 30px;
     cursor: pointer;
     padding: 4px;
@@ -59,13 +59,17 @@ body{
     user-select: none;
 }
 
-#Tutorial:hover{
+#Tutorial:hover, #leader-board:hover{
     background: black;
     color: white;
 }
 
-#Tutorial:active{
+#Tutorial:active, #leader-board:active{
     margin-left: 101.5px;
+}
+
+#Tutorial:active~span{
+    margin-left: 98.5px;
 }
 
 .modal{
@@ -93,3 +97,21 @@ body{
 .open{
     display: block;
 }
+
+#data{
+    width: 400px;
+    height: 100px;
+    border: 1px solid white;
+    position: absolute;
+    left: calc(50% - 200px);
+    top: 100px;
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    display: none;
+}
+
+.okey{
+    border-radius: 10px;
+}
+

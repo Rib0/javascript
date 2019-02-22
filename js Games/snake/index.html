@@ -8,11 +8,17 @@
     <title>Practice</title>
 </head>
 <body>
+    <div id="data">
+        <p class="name">Введите имя:</p>
+        <input class="input-name" type="text" placeholder="Имя" required>
+        <button class="okey">Okey</button>
+    </div>
     <div id="result">
         <span id="time">Time: 0</span>
         <span id="score">Score: 0</span>
         <span id="total">Total: 0</span>
         <span id="Tutorial">Tutorial</span>
+        <span id="leader-board">LeaderBoard</span>
     </div>
     <div id="main"></div>
     <div id="pausedGame" class="modal">Game is paused...</div>
@@ -25,6 +31,7 @@
         <div class="tutor">Esc - pause</div>
         <div class="tutor">Enter - replay</div>
     </div>
+    <div id="modal-leader-board" class="modal"></div>
     <script src="JFfiles/userSettings.js"></script>
     <script src="JFfiles/functions.js"></script>
 

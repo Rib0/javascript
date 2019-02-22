@@ -13,7 +13,7 @@ var x = 3,
 
 function generateField () {
     var field = document.getElementById('main')
-    field.innerHTML = ''
+    field.textContent = ''
     for (var y = 0; y < 39; y++) {             
         for (var x = 0; x < 87; x++) {
             var div = document.createElement('div')
@@ -37,8 +37,9 @@ function move () {
                 snake.push([yCoin,xCoin])
                 head = [yCoin,xCoin]
                 coinsCond = false                    
-                coinsCount++
+                coinsCount++               
             }
+            
             checkLoose()
             document.getElementById(snake[0].join(',')).classList.remove('snakeCells')
             for (var i = 0; i < snake.length - 1; i++) {
@@ -67,25 +68,25 @@ function move () {
             }
             drowSnake()
             generateCoin()
-            scoreField.innerHTML = 'Score: ' + coinsCount           
+            scoreField.textContent = 'Score: ' + coinsCount           
         }
     },60)
 } 
 function pressButton (event) {
     switch (event.keyCode) {
-        case 1099:
+        case 115:
             if (direction[0] !== -1 && head[0] + 1 !== prevHead[0] && head[1] !== prevHead[1])
                 direction = [1,0]                       
         break;
-        case 1094:          
+        case 119:          
             if (direction[0] !== 1 && head[0] - 1 !== prevHead[0] && head[1] !== prevHead[1])                
                 direction = [-1,0]             
         break;
-        case 1092:        
+        case 97:        
             if (direction[1] !== 1 && head[0] !== prevHead[0] && head[1] - 1 !== prevHead[1])              
                 direction = [0,-1]               
         break;
-        case 1074:
+        case 100:
             if (direction[1] !== -1 && head[0] !== prevHead[0] && head[1] + 1 !== prevHead[1])               
                 direction = [0,1]                  
         break;

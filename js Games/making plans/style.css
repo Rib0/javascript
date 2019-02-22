@@ -1,65 +1,51 @@
-#wrapper {
-    width: 350px;
-    border: 1px solid black;
-    padding: 8px;
-    padding-right: 10px;
+.wrapper {
+    width: 400px;
     margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid black;
+    padding: 10px;
+    font-family: sans-serif;
 }
 
 #input {
-    height: 25px;
-    width: inherit;
-    background: #fff;
-    border: 1px solid black;
+    width: 100%;
+    padding: 10px 0 10px 10px; 
+    box-sizing: border-box;
 }
 
-.block {
-    width: 368px;
-    border: 1px solid black;
-    margin: 0 auto;
-    line-height: 41px;
-    position: relative;
-}
-
-.check {
-    margin-left: 9px;
-    margin-right: 10px;
-}
-
-.cansel {
-    display: inline-block;
-    line-height: 20px;
-    width: 25px;
-    border-radius: 30px;
-    border: 1px solid red;
-    font-size: 15px;
-    text-align: center;
-    color: red;
-    font-weight: bold;
-    position: absolute;
-    left: 90%;
-    top: 25%;
-}
-
-.cansel:hover {
-    color: deeppink;
-    border: 1px solid deeppink;
-    cursor: pointer;
-}
-
-.cansel:active::first-letter {
-    margin-left: 3px;
+.todo {
+    border: 1px solid grey;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .text {
-    display: inline-block;
-    width: 80%;
-    margin: 3px 0 3px 0;
+    word-break: break-all;
 }
 
-.newInp {
-    width: 95%;
-    height: 30px;
-    background: #eee;
-    border: 1px solid black;
+.completed {
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.complete {
+    margin-right: 15px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.close {
+    display: inline-block;
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
+    text-align: center;
 }

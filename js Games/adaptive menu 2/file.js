@@ -1,14 +1,22 @@
-var blocks = document.getElementsByClassName("block");
-for (var i = 0; i < blocks.length; i++) {
-    blocks[i].addEventListener("click", show);
-}
+class HiddenText {
+    constructor () {
+        const triggers = document.querySelectorAll('.block .name');
+        this.onclick = this.onClick.bind(this);
 
-function show() {
-    var target = this.nextElementSibling;
-    if (target.offsetHeight == 0)
-        target.style.height = target.scrollHeight + "px";
-    else {
-        target.style.height = 0;
+        [].forEach.call(triggers, trigger => {
+            trigger.onclick = this.onClick;
+        })
     }
 
+    onClick (e) {
+        const text = e.target.nextElementSibling;
+        if (text.offsetHeight > 0) {
+            text.style.height = '';
+        }
+        else {
+            text.style.height = text.scrollHeight + 'px';
+        }
+    }
 }
+
+const hiddenText = new HiddenText();
