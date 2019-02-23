@@ -43,9 +43,7 @@
 }
 
 .close {
-    display: inline-block;
     font-size: 25px;
     color: red;
     cursor: pointer;
-    text-align: center;
 }
